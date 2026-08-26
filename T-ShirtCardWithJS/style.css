@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(242 242 242);
+    margin: 50px;
+}
+
+.container {
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 10px;
+    padding: 15px;
+    gap: 25px;
+    background-color: #fff;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title__name {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.color {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.btn {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(100%);
+}
+
+.label {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    background-color: #fff;
+    color: #000;
+    justify-content: center;
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+
+.label:has(.btn:checked) {
+    color: #fff;
+    background-color: #000;
+    transform: scale(1.2);
+    border: 1px solid #fff;
+}
+
+.label:has(.btn:focus-visible) {
+    color: #fff;
+    background-color: #000;
+    transform: scale(1.2);
+    border: 1px solid #fff;
+}
+
+
+.size {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.count__btn {
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all .1s ease;
+}
+
+.count__btn:active {
+    transform: scale(1.1);
+}
+
+.basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.basket__btn {
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    transition: all 0.2s ease;
+}
+
+.basket__btn:hover {
+    background-color: #000000db;
+    outline: 1px solid #fff;
+}
+
+.basket__btn:active {
+    transform: scale(1.1);
+}
+
+.basket__result {
+    background-color: lightgray;
+    width: 266px;
+    min-height: 20px;
+    border-radius: 6px;
+    padding: 10px;
+    color: #000;
+}
+
+/* Modifical */
+
+.container-black {
+    background-color: #000000cc;
+    color: #fff;
+}
+
+.container-blue {
+    background-color: #85caef;
+}
+
+
+

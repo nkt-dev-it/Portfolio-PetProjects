@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="container" id="container" autocomplete="off">
+        <div class="title">
+            <h1 class="title__name" id="titleName">Футболка Basic</h1>
+            <span class="title__price" id="titlePrice">Цена: 100$</span>
+        </div>
+        <div class="color">
+            <h3 class="color__name">Цвет:</h3>
+            <div class="color__buttons">
+                <label class="label color__label">
+                    <input type="radio" name="color" class="btn color__btn" id="colorBtnWhite">
+                    <span class="color__label_text">Белый</span>
+                </label>
+                <label class="label color__label">
+                    <input type="radio" name="color" class="btn color__btn" id="colorBtnBlack">
+                    <span class="color__label_text">Чёрный</span>
+                </label>
+                <label class="label color__label">
+                    <input type="radio" name="color" class="btn color__btn" id="colorBtnBlue">
+                    <span class="color__label_text">Синий</span>
+                </label>
+            </div>
+        </div>
+        <div class="size">
+            <h3 class="size__name" id="sizeTitle">Размер:</h3>
+            <div class="size__buttons">
+                <label class="label size__label">
+                    <input type="radio" name="size" class="btn size__btn" id="sizeBtnS">
+                    <span class="size__label_text">S</span>
+                </label>
+                <label class="label size__label">
+                    <input type="radio" name="size" class="btn size__btn" id="sizeBtnM">
+                    <span class="size__label_text">M</span>
+                </label>
+                <label class="label size__label">
+                    <input type="radio" name="size" class="btn size__btn" id="sizeBtnL">
+                    <span class="size__label_text">L</span>
+                </label>
+            </div>
+            <span id="sizeCheck">Выбранный размер: не выбран</span>
+        </div>
+        <div class="counter">
+            <h3 class="counter__name" id="counterTitle">Количество:</h3>
+            <div class="count">
+                <input type="button" name="sign" value="-" class="count__btn count__minus" id="countMinus">
+                <span class="count__span" id="countSpan">1</span>
+                <input type="button" name="sign" value="+" class="count__btn count__plus" id="countPlus">
+            </div>
+            <span class="counter__result" id="counterResult" data-price="100">Итого: 100$</span>
+        </div>
+        <div class="basket">
+            <input type="button" name="basket" value="Добавить в корзину" class="basket__btn" id="basketBtn">
+            <div class="basket__result" id="basketResult">
+            </div>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
