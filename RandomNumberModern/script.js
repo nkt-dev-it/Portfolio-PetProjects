@@ -20,8 +20,12 @@ const randNum = Math.floor(Math.random() * (max - min + 1) + min);
 
 function validateValue(value) {
     const message = document.querySelector("#message");
+    const guess = document.querySelector("#guess");
+    guess.classList.remove("guessSuccess", "guessError");
+    message.classList.remove("success", "error");
     if (Number(value) < min || Number(value) > max) {
         message.classList.add("error");
+        guess.classList.add("guessError");
         message.textContent = `Error, input a number between ${min} and ${max}`;
     }
     else {
@@ -30,10 +34,12 @@ function validateValue(value) {
             message.classList.add("success");
             message.textContent = "Right! You WIN!";
             document.querySelector("#btn").value = "RETURN";
-            document.querySelector("#guess").disabled = true;
+            guess.disabled = true;
+            guess.classList.add("guessSuccess");
         }
         else if (total > 0) {
                 message.classList.add("error");
+                guess.classList.add("guessError");
                 if (randNum < Number(value)) {
                     message.innerHTML = `NO! Your number is <span style="color: black;">BIGGER</span> than my number. You have ${total} attempts`;
                 }

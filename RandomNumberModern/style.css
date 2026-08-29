@@ -22,6 +22,7 @@ body {
     color: green;
 }
 
+
 #guess {
     padding: 10px 5px;
     border-radius: 3px;
@@ -46,4 +47,12 @@ body {
 
 #guess:focus {
     border-color:  #000;
+}
+
+#guess.guessSuccess {
+    border-color: green;
+}
+
+#guess.guessError {
+    border-color: red;
 }
