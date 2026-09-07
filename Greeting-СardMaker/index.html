@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardMarket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1 class="title">Конструктор открытки</h1>
+            <div class="section">
+                <h2 class="section__title">Выберите стиль:</h2>
+                <div class="section__buttons">
+                    <button class="btn" id="btnLight" data-color="Светлая">Светлая</button>
+                    <button class="btn" id="btnDark" data-color="Тёмная">Тёмная</button>
+                    <button class="btn" id="btnGreet" data-color="Праздничная">Праздничная</button>
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section__title">Выберите эмодзи:</h2>
+                <div class="section__buttons">
+                    <button class="btn" id="btnSalut" data-emoji="🎉">🎉</button>
+                    <button class="btn" id="btnHeart" data-emoji="❤️">❤️</button>
+                    <button class="btn" id="btnStar" data-emoji="⭐">⭐</button>
+                </div>
+            </div>
+            <div class="finalSection">
+                <input type="text" name="user" id="user" placeholder="Кому открытка?" class="finalSection__input">
+                <input type="text" name="text" id="text" placeholder="Текст поздравления" class="finalSection__input">
+            </div>
+            <button class="btn btnResult" id="btnResult">Создать открытку</button>
+            <p id="error"></p>
+            <div class="information">
+                <span id="emoji" class="information__emoji" data-addedEmoji="🎉">🎉</span>
+                <span id="forUser" class="information__text">Для: ...</span>
+                <p id="greetText" class="information__text">Текст поздравления появится здесь</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
