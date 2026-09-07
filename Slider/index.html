@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Слайдер с метриками</title>
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .slider-app {
+      width: 800px;
+      max-width: 100%;
+    }
+
+    .slider {
+      position: relative;
+      width: 800px;
+      height: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      background: #111;
+      transition: width 0.3s, height 0.3s, border-radius 0.3s;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .slide h2 {
+      margin: 0 0 15px;
+      font-size: 42px;
+    }
+
+    .slide p {
+      margin: 0;
+      font-size: 22px;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    .slide-1 {
+      background: linear-gradient(135deg, #ff7b54, #ffb26b);
+    }
+
+    .slide-2 {
+      background: linear-gradient(135deg, #5b8def, #7ed6df);
+    }
+
+    .slide-3 {
+      background: linear-gradient(135deg, #7a5cff, #b07cff);
+    }
+
+    .slide-4 {
+      background: linear-gradient(135deg, #00b894, #55efc4);
+    }
+
+    .slide-5 {
+      background: linear-gradient(135deg, #2d3436, #636e72);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 2;
+      transition: 0.2s;
+    }
+
+    .arrow:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .arrow-left {
+      left: 15px;
+    }
+
+    .arrow-right {
+      right: 15px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .controls button {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #222;
+      color: white;
+      transition: 0.2s;
+    }
+
+    .controls button:hover {
+      background: #000;
+    }
+
+    .counter,
+    .size-info,
+    .metrics-info {
+      font-size: 16px;
+      background: white;
+      padding: 12px 16px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .slider {
+        height: 320px;
+      }
+
+      .slide h2 {
+        font-size: 30px;
+      }
+
+      .slide p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="slider-app">
+      <div class="slider" id="slider">
+        <button class="arrow arrow-left" id="prevBtn">&#8592;</button>
+        <button class="arrow arrow-right" id="nextBtn">&#8594;</button>
+
+        <div class="slide slide-1 active">
+          <h2>JavaScript</h2>
+          <p>Слайдер можно переключать кнопками и стрелками клавиатуры.</p>
+        </div>
+
+        <div class="slide slide-2">
+          <h2>DOM</h2>
+          <p>Размеры окна и размеры элемента можно получить через метрики.</p>
+        </div>
+
+        <div class="slide slide-3">
+          <h2>Keyboard Events</h2>
+          <p>Используем событие keydown и реагируем на ArrowLeft и ArrowRight.</p>
+        </div>
+
+        <div class="slide slide-4">
+          <h2>Metrics</h2>
+          <p>Разворачивание идёт через clientWidth и clientHeight окна.</p>
+        </div>
+
+        <div class="slide slide-5">
+          <h2>Resize</h2>
+          <p>При изменении размера окна развёрнутый слайдер пересчитывается заново.</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="toggleSizeBtn" class="">Развернуть на весь экран</button>
+        <div class="counter" id="counter">
+          <span id="current-slide"></span> 
+          / 
+          <span id="slide-count"></span>
+        </div>
+        <div class="size-info" id="sizeInfo">Размер слайдера: 
+          <span id="slider-width"></span>
+          x
+          <span id="slider-height"></span>
+        </div>
+        <div class="metrics-info" id="metricsInfo">Размер окна:
+          <span id="window-width"></span>
+          x
+          <span id="window-height"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
