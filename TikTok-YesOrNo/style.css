@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: pink;
+    font-family: "Rampart One", sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 350px;
+    padding: 25px;
+    border: 1px solid rgb(241, 122, 142);
+    border-radius: 10px;
+    background-color: rgb(253, 209, 216);
+    box-shadow: 0px 0px 50px rgb(241, 40, 74);
+    text-align: center;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title {
+    font-size: 24px;
+    color: #702424;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.channel {
+    text-shadow: 0px 0px 25px red;
+    font-size: 15px;
+    color: #702424;
+}
+
+.chose {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    background-color: pink;
+    border: 1px dashed rgb(241, 40, 74);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform .2s ease, border .2s ease;
+    text-decoration: none;
+    color: #702424;
+    font-weight: 600;
+    display: inline-block;
+}
+
+#btn1:hover {
+    transform: scale(1.15);
+    border: 1px solid rgb(241, 40, 74);
+    box-shadow: 0px 0px 5px red;
+}
+
+.afterClick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image {
+    display: none;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+
+#thanks {
+    display: none;
+    font-size: 18px;
+    color: #702424;
+}
+
+@media (max-width: 360px) {
+    .title {
+        font-size: 20px;
+    }
+    .container {
+        padding: 15px;
+        gap: 15px;
+    }
+}
