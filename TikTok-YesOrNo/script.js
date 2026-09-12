@@ -19,15 +19,15 @@ window.addEventListener("DOMContentLoaded", function(event) {
     btn2.addEventListener("mouseenter", function(event) {
         btn2.style.cssText = `
         position: absolute;
-        top: ${Math.floor(Math.random() * window.innerHeight + 1)}px;
-        left: ${Math.floor(Math.random() * window.innerWidth + 1)}px;`
+        top: ${Math.floor(Math.random() * (window.innerHeight - 100) + 1)}px;
+        left: ${Math.floor(Math.random() * (window.innerWidth - 100) + 1)}px;`
     });
     
     btn2.addEventListener("click", function(event) {
         btn2.style.cssText = `
         position: absolute;
-        top: ${Math.floor(Math.random() * window.innerHeight + 1)}px;
-        left: ${Math.floor(Math.random() * window.innerWidth + 1)}px;`
+        top: ${Math.floor(Math.random() * (window.innerHeight - 100) + 1)}px;
+        left: ${Math.floor(Math.random() * (window.innerWidth - 100) + 1)}px;`
     });
     
 })
