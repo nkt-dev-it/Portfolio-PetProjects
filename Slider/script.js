@@ -98,14 +98,8 @@ toggle.addEventListener("click", function() {
 
 document.addEventListener("keydown", function(event) {
     if (toggle.matches(".fullSize")) {
-        if (event.key === "Escape") {
-            document.querySelector("#slider").style.cssText = `
-                position: relative;
-                width: 800px;
-                height: 450px;
-                border-radius: 16px;
-            `;
-            toggle.classList.remove("fullSize");
+        if (event.code === "KeyQ") {
+            document.querySelector("#slider").style.cssText = ``;
         }
     }
 });
